@@ -7,9 +7,9 @@ class QueryBuilder
         $this->pdo = $pdo;
     }
 
-    public function selectAll($sql, $model = null)
+    public function selectAll($table, $model = null)
     {
-        $query = $this->pdo->prepare($sql);
+        $query = $this->pdo->prepare("select * from {$table}");
         $query->execute();
         return $query->fetchAll(PDO::FETCH_CLASS, $model);
     }
