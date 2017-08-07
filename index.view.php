@@ -3,14 +3,14 @@
 		<title>PHP</title>
 	</header>
 	<body>
-		<h2>TODO LIST:</h2>
+		<h2>待办事项：</h2>
 		<ul>
 			<?php foreach($tasks as $task): ?>
 			<li>
-				<?php if($task['completed']): ?>
-					<del><?= $task['description'] ?></del>
+				<?php if($task->completed): ?>
+					<del><?= $task->description ?></del>
 				<?php else: ?>
-					<?= $task['description'] ?>
+					<?= $task->description ?>
 				<?php endif; ?>
 			</li>
 			<?php endforeach; ?>
