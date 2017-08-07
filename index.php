@@ -1,5 +1,7 @@
 <?php
 
+require 'functions.php';
+
 $tasks = [
     [
         'description' => '去学校上课',
@@ -15,4 +17,4 @@ $tasks = [
     ],
 ];
 
-require "index.view.php";
+require 'index.view.php';
