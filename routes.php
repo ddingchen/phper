@@ -1,6 +1,5 @@
 <?php 
 
-return [
-	'' => 'controllers/list.php',
-	'create' => 'controllers/create.php'
-];
+$route->get('', 'controllers/list.php');
+$route->get('create', 'controllers/create.php');
+$route->post('create', 'controllers/store.php');
