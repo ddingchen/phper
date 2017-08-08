@@ -1,6 +1,8 @@
 <?php 
 
-use App\Core\App;
+use Foundation\App;
+use Foundation\Database\QueryBuilder;
+use Foundation\Database\Connection;
 
 App::bind('config', require('config.php'));
 
@@ -12,7 +14,7 @@ function view($name, $data = [])
 {
 	extract($data);
 
-	require "app/views/{$name}.view.php";
+	require "app/View/{$name}.view.php";
 }
 
 function redirect($path)

@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Core;
+namespace Foundation;
 
 class Router
 {
@@ -43,7 +43,7 @@ class Router
 
 	private function callAction($controller, $action)
 	{
-		$controller = 'App\\Controller\\' . $controller;
+		$controller = 'Application\\Controller\\' . $controller;
 		$controller = new $controller;
 		if(!method_exists($controller, $action)) {
 			throw new \Exception("控制器{$controller}中未找到对应的处理{$action}");

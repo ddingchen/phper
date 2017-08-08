@@ -1,5 +1,7 @@
 <?php
 
+namespace Foundation\Database;
+
 class QueryBuilder
 {
     public function __construct($pdo)
@@ -9,10 +11,10 @@ class QueryBuilder
 
     public function selectAll($table, $model = null)
     {
-        $model = $model ? "App\\Model\\{$model}" : null;
+        $model = $model ? "Application\\Model\\{$model}" : null;
         $query = $this->pdo->prepare("select * from {$table}");
         $query->execute();
-        return $query->fetchAll(PDO::FETCH_CLASS, $model);
+        return $query->fetchAll(\PDO::FETCH_CLASS, $model);
     }
 
     public function insert($table, $parameters)
