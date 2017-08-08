@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\Core;
+
 class Router
 {
 	private $routes = [];
@@ -31,7 +33,7 @@ class Router
 		$uri = Request::uri();
 		$method = Request::method();
 		if(!array_key_exists($uri, $this->routes[$method])) {
-			throw new Exception('没有定义该路由');
+			throw new \Exception('没有定义该路由');
 		}
 
 		$this->callAction(
@@ -41,9 +43,10 @@ class Router
 
 	private function callAction($controller, $action)
 	{
+		$controller = 'App\\Controller\\' . $controller;
 		$controller = new $controller;
 		if(!method_exists($controller, $action)) {
-			throw new Exception("控制器{$controller}中未找到对应的处理{$action}");
+			throw new \Exception("控制器{$controller}中未找到对应的处理{$action}");
 		}
 
 		$controller->$action();

@@ -1,5 +1,7 @@
 <?php 
 
+namespace App\Core;
+
 class App
 {
 	private static $registry = [];
@@ -12,7 +14,7 @@ class App
 	public static function get($key)
 	{
 		if(!array_key_exists($key, static::$registry)) {
-			throw new Exception('未能找到对应的依赖组件');
+			throw new \Exception('未能找到对应的依赖组件');
 		}
 		return static::$registry[$key];
 	}
