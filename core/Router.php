@@ -33,6 +33,19 @@ class Router
 		if(!array_key_exists($uri, $this->routes[$method])) {
 			throw new Exception('没有定义该路由');
 		}
-		return $this->routes[$method][$uri];
+
+		$this->callAction(
+			...explode('@', $this->routes[$method][$uri])
+		);
+	}
+
+	private function callAction($controller, $action)
+	{
+		$controller = new $controller;
+		if(!method_exists($controller, $action)) {
+			throw new Exception("控制器{$controller}中未找到对应的处理{$action}");
+		}
+
+		$controller->$action();
 	}
 }

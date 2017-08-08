@@ -1,5 +1,5 @@
 <?php 
 
-$route->get('', 'controllers/list.php');
-$route->get('create', 'controllers/create.php');
-$route->post('create', 'controllers/store.php');
+$route->get('', 'TaskController@index');
+$route->get('create', 'TaskController@create');
+$route->post('create', 'TaskController@store');
