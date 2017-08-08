@@ -1,6 +1,6 @@
 <?php 
 
-$db->insert('tasks', [
+App::get('database')->insert('tasks', [
 	'description' => $_REQUEST['description']
 ]);
 
