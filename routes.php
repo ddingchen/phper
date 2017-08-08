@@ -1,6 +1,6 @@
 <?php 
 
 return [
-	'' => 'list.php',
-	'create' => 'create.php'
+	'' => 'controllers/list.php',
+	'create' => 'controllers/create.php'
 ];

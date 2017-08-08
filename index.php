@@ -1,5 +1,5 @@
 <?php
 
-$db = require 'bootstrap.php';
+$db = require 'core/bootstrap.php';
 
 require $router->direct();
