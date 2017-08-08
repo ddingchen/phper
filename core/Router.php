@@ -28,8 +28,8 @@ class Router
 
 	public function direct()
 	{
-		$uri = trim($_SERVER['REQUEST_URI'], '/');
-		$method = $_SERVER['REQUEST_METHOD'];
+		$uri = Request::uri();
+		$method = Request::method();
 		if(!array_key_exists($uri, $this->routes[$method])) {
 			throw new Exception('没有定义该路由');
 		}

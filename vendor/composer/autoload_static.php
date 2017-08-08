@@ -12,6 +12,7 @@ class ComposerStaticInitef3013e966ccc00651acf62712c91c2a
         'Composer\\Autoload\\ComposerStaticInitef3013e966ccc00651acf62712c91c2a' => __DIR__ . '/..' . '/composer/autoload_static.php',
         'Connection' => __DIR__ . '/../..' . '/core/database/Connection.php',
         'QueryBuilder' => __DIR__ . '/../..' . '/core/database/QueryBuilder.php',
+        'Request' => __DIR__ . '/../..' . '/core/Request.php',
         'Router' => __DIR__ . '/../..' . '/core/Router.php',
         'Task' => __DIR__ . '/../..' . '/models/Task.php',
     );
