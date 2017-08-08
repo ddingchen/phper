@@ -1,3 +1,7 @@
 <?php 
 
-dd($_REQUEST);
+$db->insert('tasks', [
+	'description' => $_REQUEST['description']
+]);
+
+header('Location: /');
